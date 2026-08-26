@@ -1,0 +1,62 @@
+.form-section {
+    border: 0;
+    padding: 0;
+    margin-block: 0;
+    margin-inline: 0;
+    margin-block-end: var(--dxp-s-spacing-medium, var(--dxp-g-spacing-medium, var(--slds-g-spacing-4, 1rem)));
+    min-width: 0;
+}
+
+.section-header {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-block-end: var(--dxp-s-spacing-small, var(--dxp-g-spacing-small, var(--slds-g-spacing-2, 0.5rem)));
+    font-size: var(--slds-g-font-scale-2, 1rem);
+    font-weight: var(--slds-g-font-weight-bold, 700);
+    color: var(--dxp-s-text-heading-small-color, var(--dxp-g-root-contrast, var(--slds-g-color-neutral-base-10, #181818)));
+}
+
+.payment-summary {
+    margin-block-end: var(--dxp-s-spacing-medium, var(--dxp-g-spacing-medium, var(--slds-g-spacing-4, 1rem)));
+    text-align: center;
+}
+
+.payment-summary__amount {
+    margin: 0;
+    font-size: var(--slds-g-font-scale-6, 2rem);
+    font-weight: var(--slds-g-font-weight-bold, 700);
+    color: var(--dxp-s-body-text-color, var(--dxp-g-root-contrast, var(--slds-g-color-neutral-base-10, #181818)));
+}
+
+.payment-summary__frequency {
+    margin: 0;
+    font-size: var(--slds-g-font-scale-1, 0.875rem);
+    color: var(--dxp-s-body-small-text-color, var(--dxp-g-root-contrast, var(--slds-g-color-neutral-base-30, #444444)));
+}
+
+/* Full-width, stable box so cpm-pay-button doesn't jump from content- to full-width
+   when it toggles its own inline error banner. */
+c-payment-selector,
+cpm-pay-button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+cpm-pay-button {
+    margin-block-start: var(--dxp-s-spacing-medium, var(--dxp-g-spacing-medium, var(--slds-g-spacing-4, 1rem)));
+}
+
+.payment-methods-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--dxp-s-spacing-small, var(--dxp-g-spacing-small, var(--slds-g-spacing-2, 0.5rem)));
+    text-align: center;
+}
+
+.error-message {
+    margin: 0;
+    color: var(--dxp-g-destructive, var(--slds-g-color-error-1, #c23934));
+}

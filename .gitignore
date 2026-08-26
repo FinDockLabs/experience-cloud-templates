@@ -15,3 +15,5 @@ node_modules/
 .vscode/
 .idea/
 core.code-workspace
+# jest output
+coverage/

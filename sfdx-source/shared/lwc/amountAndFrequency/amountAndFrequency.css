@@ -1,0 +1,225 @@
+/* =========================================================================
+   Amount & Frequency styles
+   Color/visibility properties use a 3-level fallback chain:
+     --dxp-s-* (form-element semantic)  →  --dxp-g-* (global brand)  →  --slds-g-* (SLDS default)
+   so the component stays readable and contrast-safe even on an unconfigured theme.
+   Purely decorative properties (letter-spacing, radius) skip the middle level.
+   ========================================================================= */
+
+/* Reset default fieldset styles for both groups */
+.frequency-toggle,
+.amount-grid {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+.amount-frequency-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--slds-g-spacing-4);
+    width: 100%;
+    --amount-control-padding-block-start: var(--dxp-s-form-element-spacing-block-start, var(--slds-g-spacing-2));
+    --amount-control-padding-block-end: var(--dxp-s-form-element-spacing-block-end, var(--slds-g-spacing-2));
+    --amount-field-padding-block-start: calc(var(--amount-control-padding-block-start) + var(--slds-g-sizing-border-2));
+    --amount-field-padding-block-end: calc(var(--amount-control-padding-block-end) + var(--slds-g-sizing-border-2));
+}
+
+/* Frequency Toggle */
+.frequency-toggle {
+    display: flex;
+    background-color: var(--slds-g-color-neutral-base-95);
+    border-radius: var(--dxp-s-form-element-radius-border, var(--slds-g-radius-border-2));
+    padding: var(--slds-g-sizing-border-2);
+}
+
+.toggle-option {
+    flex: 1;
+    box-sizing: border-box;
+    min-height: var(--slds-g-sizing-10);
+    padding-block: var(--amount-control-padding-block-start) var(--amount-control-padding-block-end);
+    border: var(--slds-g-sizing-border-2) solid transparent;
+    border-radius: var(--dxp-s-form-element-radius-border, var(--slds-g-radius-border-2));
+    background: transparent;
+    font-family: var(--dxp-s-form-element-text-font-family, var(--slds-g-font-family-sans));
+    font-size: var(--dxp-s-form-element-text-font-size, var(--slds-g-font-scale-1));
+    font-weight: var(--dxp-s-form-element-text-font-weight, var(--slds-g-font-weight-medium));
+    color: var(--dxp-s-form-element-text-color, var(--dxp-g-root-contrast-color, var(--slds-g-color-neutral-base-30)));
+    letter-spacing: var(--dxp-s-form-element-text-letter-spacing, normal);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--slds-g-spacing-2);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+/* Monthly Icon (heart) */
+.monthly-icon {
+    --slds-c-icon-color-foreground-default: var(--slds-g-color-error-base-50);
+}
+
+/* Preset Amount Grid */
+.amount-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--slds-g-spacing-3);
+}
+
+/* Wrapper must not break the grid layout */
+.amount-cell {
+    display: contents;
+}
+
+/* Amount Option Button */
+.amount-option {
+    box-sizing: border-box;
+    min-height: var(--slds-g-sizing-10);
+    padding-block: var(--amount-field-padding-block-start) var(--amount-field-padding-block-end);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--dxp-s-form-element-width-border, var(--slds-g-sizing-border-2)) solid var(--dxp-s-form-element-color-border, var(--dxp-g-root-border-color, var(--slds-g-color-border-1)));
+    border-radius: var(--dxp-s-form-element-radius-border, var(--slds-g-radius-border-2));
+    background-color: var(--dxp-s-form-element-color-background, var(--dxp-g-root-background-color, var(--slds-g-color-neutral-base-100)));
+    font-family: var(--dxp-s-form-element-text-font-family, var(--slds-g-font-family-sans));
+    font-size: var(--dxp-s-form-element-text-font-size, var(--slds-g-font-scale-1));
+    font-weight: var(--dxp-s-form-element-text-font-weight, var(--slds-g-font-weight-medium));
+    color: var(--dxp-s-form-element-text-color, var(--dxp-g-root-contrast-color, var(--slds-g-color-neutral-base-10)));
+    letter-spacing: var(--dxp-s-form-element-text-letter-spacing, normal);
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+/* subtle hover tint, works on any theme, distinct from selected state */
+.visually-hidden-input:not(:checked) + .toggle-option:hover,
+.visually-hidden-input:not(:checked) + .amount-option:hover {
+    background-color: color-mix(in srgb, var(--dxp-g-brand, var(--slds-g-color-brand-base-60)) 8%, transparent);
+}
+
+/* ─── Custom Amount Row ──────────────────────────────────────────────────── */
+
+.custom-amount-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--slds-g-spacing-1);
+}
+
+.custom-amount-row {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: var(--slds-g-sizing-10);
+    border: var(--dxp-s-form-element-width-border, var(--slds-g-sizing-border-2)) solid var(--dxp-s-form-element-color-border, var(--dxp-g-root-border-color, var(--slds-g-color-border-1)));
+    border-radius: var(--dxp-s-form-element-radius-border, var(--slds-g-radius-border-2));
+    background-color: var(--dxp-s-form-element-color-background, var(--dxp-g-root-background-color, var(--slds-g-color-neutral-base-100)));
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+.custom-amount-row:focus-within {
+    border-color: var(--dxp-s-form-element-color-border-focus, var(--dxp-g-brand, var(--slds-g-color-brand-base-60)));
+    outline: none;
+}
+
+.custom-amount-row--error,
+.custom-amount-row--error:focus-within {
+    border-color: var(--slds-g-color-error-base-50);
+}
+
+.currency-adornment {
+    flex-shrink: 0;
+    padding-block: var(--amount-field-padding-block-start) var(--amount-field-padding-block-end);
+    padding-inline: var(--slds-g-spacing-3);
+    font-family: var(--dxp-s-form-element-text-font-family, var(--slds-g-font-family-sans));
+    font-size: var(--dxp-s-form-element-text-font-size, var(--slds-g-font-scale-1));
+    color: var(--dxp-s-form-element-text-color, var(--dxp-g-root-contrast-color, var(--slds-g-color-neutral-base-30)));
+    user-select: none;
+}
+
+.currency-adornment-suffix {
+    border-left: var(--slds-g-sizing-border-1) solid var(--dxp-s-form-element-color-border, var(--slds-g-color-border-1));
+}
+
+.custom-amount-input-native {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    padding-block: var(--amount-field-padding-block-start) var(--amount-field-padding-block-end);
+    padding-inline: var(--slds-g-spacing-3);
+    font-family: var(--dxp-s-form-element-text-font-family, var(--slds-g-font-family-sans));
+    font-size: var(--dxp-s-form-element-text-font-size, var(--slds-g-font-scale-1));
+    color: var(--dxp-s-form-element-text-color, var(--dxp-g-root-contrast-color, var(--slds-g-color-neutral-base-10)));
+    outline: none;
+    /* Remove native number spinners — they clash with the currency adornments */
+    -moz-appearance: textfield;
+}
+
+.custom-amount-input-native::-webkit-outer-spin-button,
+.custom-amount-input-native::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.custom-amount-input-native::placeholder {
+    color: var(--dxp-s-form-element-text-color, var(--slds-g-color-neutral-base-50));
+    opacity: 1;
+}
+
+
+/* Validation error */
+.amount-error {
+    margin: 0;
+    padding: 0;
+    font-family: var(--dxp-s-form-element-text-font-family, var(--slds-g-font-family-sans));
+    font-size: var(--slds-g-font-scale-neg-1);
+    color: var(--slds-g-color-error-base-50);
+}
+
+/* Form-level errors render only when present, so they always take their spacing. */
+.amount-error--form {
+    margin-block-start: var(--slds-g-spacing-2);
+}
+
+/* ─── Visually hidden but keyboard/screen-reader accessible ─────────────── */
+
+.visually-hidden-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Selected state (toggle): inset ring via box-shadow — no layout shift */
+.visually-hidden-input:checked + .toggle-option {
+    background-color: var(--dxp-s-form-element-color-background, var(--dxp-g-root-background-color, var(--slds-g-color-neutral-base-100)));
+    color: var(--dxp-s-form-element-text-color, var(--dxp-g-root-contrast-color, var(--slds-g-color-neutral-base-10)));
+    box-shadow: inset 0 0 0 2px var(--dxp-g-brand, var(--slds-g-color-brand-base-60));
+}
+
+/* Selected state (preset amount) */
+.visually-hidden-input:checked + .amount-option {
+    background-color: var(--dxp-s-form-element-color-background-active, var(--dxp-s-form-element-color-background, var(--slds-g-color-neutral-base-100)));
+    box-shadow: inset 0 0 0 2px var(--dxp-g-brand, var(--slds-g-color-brand-base-60));
+}
+
+/* Visible keyboard focus (WCAG 2.4.7 AA) drawn on the label */
+.visually-hidden-input:focus-visible + .toggle-option,
+.visually-hidden-input:focus-visible + .amount-option {
+    outline: 2px solid var(--dxp-g-brand, var(--slds-g-color-brand-base-60));
+    outline-offset: 2px;
+}
+
+/* Selected + focused: drop the inset ring so only the focus outline shows */
+.visually-hidden-input:checked:focus-visible + .toggle-option,
+.visually-hidden-input:checked:focus-visible + .amount-option {
+    box-shadow: none;
+}

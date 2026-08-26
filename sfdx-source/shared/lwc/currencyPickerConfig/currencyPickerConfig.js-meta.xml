@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <description>Custom Property Editor for the currencyPicker Flow screen component (multi-select for available currencies, single-select for the default).</description>
+    <isExposed>false</isExposed>
+</LightningComponentBundle>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- Checkout Flow -->
+    <labels>
+        <fullName>ec_pay_button_prefix</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Prefix shown before the amount on the pay button (e.g. "Pay €167.00")</shortDescription>
+        <value>Pay</value>
+    </labels>
+    <labels>
+        <fullName>ec_frequency_label_one_time</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Displayed frequency for a one-time payment</shortDescription>
+        <value>One-time</value>
+    </labels>
+    <labels>
+        <fullName>ec_frequency_label_monthly</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Displayed frequency for a recurring payment</shortDescription>
+        <value>Monthly</value>
+    </labels>
+</CustomLabels>

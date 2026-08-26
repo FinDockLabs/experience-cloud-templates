@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <description>Amount and Frequency Selector for donation forms</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Amount and Frequency Selector</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen" configurationEditor="c-amount-and-frequency-config">
+
+            <property name="freq1Value" type="String" role="inputOnly" label="Frequency 1 — API value" description="API value for the first frequency option." default="oneTime"/>
+            <property name="freq2Value" type="String" role="inputOnly" label="Frequency 2 — API value" description="API value for the second frequency option." default="recurring"/>
+            <property name="showFrequencyToggle" type="Boolean" role="inputOnly" label="Show frequency toggle" description="Uncheck to hide the toggle and always submit frequency 1." default="true"/>
+
+            <property name="presetAmountsOneTime" type="String"  role="inputOnly" label="Preset amounts — one-time (comma-separated)" description="Up to 6 comma-separated numbers, e.g. 25,50,100,250,500,1000. Leave blank to hide the preset grid." default="25,50,100,250,500,1000"/>
+            <property name="presetAmountsRecurring" type="String"  role="inputOnly" label="Preset amounts — recurring (comma-separated)" description="Up to 6 comma-separated numbers for the recurring frequency. Leave blank to hide the preset grid." default="5,10,25,60,125,250"/>
+            <property name="minAmount" type="Integer" role="inputOnly" label="Minimum amount" description="Minimum accepted value in the custom amount field." default="1"/>
+            <property name="maxAmount" type="Integer" role="inputOnly" label="Maximum amount (0 = none)" description="Maximum accepted value. Set to 0 for no limit." default="0"/>
+
+            <property name="currencyCode" type="String" role="inputOnly" label="Currency Code (ISO)" description="ISO 4217 code (e.g. EUR) or a flow variable providing the active currency at runtime (e.g. {!currencyPicker.value})."/>
+            <property name="defaultFrequency" type="String" role="inputOnly" label="Default frequency" description="Frequency pre-selected when the component loads, e.g. oneTime or recurring." default="oneTime"/>
+
+            <property name="frequency"        type="String"  role="outputOnly" label="Frequency" description="API value of the selected frequency (matches freq1Value or freq2Value)."/>
+            <property name="amountOneTime"    type="String" role="outputOnly" label="Amount — one-time" description="Amount when frequency is one-time; null otherwise."/>
+            <property name="amountRecurring"  type="String" role="outputOnly" label="Amount — recurring" description="Amount when frequency is recurring; null otherwise."/>
+            <property name="isAmountSelected" type="Boolean" role="outputOnly" label="Amount selected" description="True when an amount greater than zero is selected. Use in visibility rules to reveal fields once the donor picks an amount."/>
+            <property name="selectedCurrency" type="String" role="outputOnly" label="Selected currency" description="ISO 4217 code of the active currency. Reference this from the PaymentIntent so the currency works even without the Currency Picker."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

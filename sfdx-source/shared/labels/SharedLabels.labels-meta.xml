@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Single source of the shared Custom Labels for all Experience templates.
+  Owned by the "FinDock Experiences - Shared" package.
+  Variants must NOT redeclare these labels; they reference them via $Label.c.*
+  (an org-dependent package resolves them in the org at install time).
+-->
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- Experience Progress Stages -->
+    <labels>
+        <fullName>ec_sr_progress_stage_announcement</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Aria live region announcement text on step change</shortDescription>
+        <value>Step {0} of 3</value>
+    </labels>
+    <labels>
+        <fullName>ec_stage_label_amount</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Default label for the amount step in the progress indicator</shortDescription>
+        <value>Amount</value>
+    </labels>
+    <labels>
+        <fullName>ec_stage_label_information</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Default label for the information step in the progress indicator</shortDescription>
+        <value>Information</value>
+    </labels>
+    <labels>
+        <fullName>ec_stage_label_payment</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Default label for the payment step in the progress indicator</shortDescription>
+        <value>Payment</value>
+    </labels>
+    <!-- Amount And Frequency -->
+    <labels>
+        <fullName>ec_label_donation_amount_heading</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Donation amount section heading</shortDescription>
+        <value>Select Your Donation Amount</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_amount_max_error</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Custom amount exceeds maximum validation message</shortDescription>
+        <value>Maximum amount is {0}</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_amount_min_error</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Custom amount below minimum validation message</shortDescription>
+        <value>Minimum amount is {0}</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_amount_required</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Amount required validation message</shortDescription>
+        <value>Please select or enter an amount</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_give_once</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Give once frequency option</shortDescription>
+        <value>Give once</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_monthly</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Monthly frequency option</shortDescription>
+        <value>Monthly</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_other_amount</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Custom amount input label</shortDescription>
+        <value>Other amount</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_donation_frequency</fullName>
+        <categories>Accessibility</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Assistive text for the donation frequency group</shortDescription>
+        <value>Donation frequency</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_preset_amount_group</fullName>
+        <categories>Accessibility</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Assistive text for the preset donation amount group</shortDescription>
+        <value>Select a preset donation amount</value>
+    </labels>
+    <!-- Currency (currencyPicker / currencyUtils) -->
+    <labels>
+        <fullName>ec_label_currency</fullName>
+        <categories>Experience Cloud</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Currency selector label</shortDescription>
+        <value>Currency</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_amount_in_currency</fullName>
+        <categories>Accessibility</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Assistive text describing the currency of the amount field ({0} = currency name)</shortDescription>
+        <value>Amount in {0}</value>
+    </labels>
+</CustomLabels>

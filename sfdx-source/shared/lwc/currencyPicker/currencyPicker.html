@@ -1,0 +1,18 @@
+<template>
+    <template lwc:if={showPicker}>
+        <div class="currency-picker-container">
+            <lightning-combobox
+                class="currency-picker"
+                name="currency"
+                label={labels.ec_label_currency}
+                value={value}
+                options={options}
+                onchange={handleChange}>
+            </lightning-combobox>
+
+            <span class="slds-assistive-text" role="status" aria-live="polite">
+                {selectedCurrencyAssistiveText}
+            </span>
+        </div>
+    </template>
+</template>

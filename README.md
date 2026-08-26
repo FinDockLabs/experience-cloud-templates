@@ -20,17 +20,17 @@ If you prefer to build a fully custom implementation, on Salesforce or outside o
 ## Available templates
 
 **Membership, Subscription, Commerce, etc.**
-- [Checkout flow](https://github.com/FinDockLabs/experience-cloud-checkout-flow): a simple Flow template for creating a payment form  
+- [Checkout flow](sfdx-source/packages/checkout): a simple Flow template for creating a payment form  
 - [Checkout site](https://github.com/FinDockLabs/experience-cloud-checkout-site): Experience Cloud site template that implements the Checkout flow template
 
 **Fundraising**
-- [Donation flows for Fundraising](https://github.com/FinDockLabs/experience-cloud-donation-flows-fundraising): Multi-screen Flow template for collecting donations in orgs with Fundraising enabled (NPC, EDU)  
-- [Donation flows for Fundraising UK](https://github.com/FinDockLabs/experience-cloud-donation-flows-fundraising-uk): Multi-screen Flow template for collecting donations and Gift Aid in orgs with Fundraising enabled (NPC, EDU)  
-- [Donation flows for NPSP](https://github.com/FinDockLabs/experience-cloud-donation-flows-npsp): single and multi-screen Flow templates for collecting donations in orgs with NPSP
+- [Donation flows for Fundraising](sfdx-source/packages/donation-fundraising): Multi-screen Flow template for collecting donations in orgs with Fundraising enabled (NPC, EDU)  
+- [Donation flows for Fundraising UK](sfdx-source/packages/donation-fundraising-uk): Multi-screen Flow template for collecting donations and Gift Aid in orgs with Fundraising enabled (NPC, EDU)  
+- [Donation flows for NPSP](sfdx-source/packages/donation-npsp): single and multi-screen Flow templates for collecting donations in orgs with NPSP
 - [Donation site](https://github.com/FinDockLabs/experience-cloud-donation-site) Experience Cloud site template that implements the Donation flows for Fundraising and NPSP templates
 
 **Any use-case**
-- [LWC](https://github.com/FinDockLabs/experience-cloud-lwc): pro-code template for custom LWCs when you need full code control over layout, validation, navigation, etc. without using Flow. Components integrate with FinDock Payment API and are fully configurable.
+- [LWC](sfdx-source/packages/lwc-procode): pro-code template for custom LWCs when you need full code control over layout, validation, navigation, etc. without using Flow. Components integrate with FinDock Payment API and are fully configurable.
 
 
 ## Experience Cloud & Guest User Setup
@@ -40,6 +40,8 @@ The steps below apply to every payment template in this project family — Flow-
 1. Follow [these instructions](https://help.salesforce.com/s/articleView?id=experience.rss_flow_guestuser.htm&type=5) to set up Guest User access for your Experience Cloud site.
 2. The **FinDock Experience Cloud permission set** must be assigned to the site's Guest User.
 3. Go to Experience Cloud Administration → Preferences → enable **Allow guest users to access public APIs**.
+
+Install the template package before deploying the site bundle — the site embeds the flow, which renders the shared components.
 
 If any of these are missing, guest-user payments will fail at runtime even though the page renders correctly.
 

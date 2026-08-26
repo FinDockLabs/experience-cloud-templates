@@ -1,0 +1,120 @@
+<template>
+    <div class="amount-frequency-container">
+
+        <!-- Frequency Toggle -->
+        <template lwc:if={showFrequencyToggle}>
+            <fieldset class="frequency-toggle">
+                <legend class="slds-assistive-text">{labels.ec_label_donation_frequency}</legend>
+
+                <input
+                    type="radio"
+                    id={frequencyOnceId}
+                    name={frequencyGroupName}
+                    value={freq1Value}
+                    class="visually-hidden-input"
+                    checked={isFreq1Selected}
+                    onchange={handleFrequencyChange}
+                />
+                <label for={frequencyOnceId} class="toggle-option">{labels.ec_label_give_once}</label>
+
+                <input
+                    type="radio"
+                    id={frequencyMonthlyId}
+                    name={frequencyGroupName}
+                    value={freq2Value}
+                    class="visually-hidden-input"
+                    checked={isFreq2Selected}
+                    onchange={handleFrequencyChange}
+                />
+                <label for={frequencyMonthlyId} class="toggle-option toggle-option-secondary">
+                    <lightning-icon
+                        icon-name="utility:heart"
+                        size="x-small"
+                        class="monthly-icon"
+                        aria-hidden="true"
+                    ></lightning-icon>
+                    {labels.ec_label_monthly}
+                </label>
+            </fieldset>
+        </template>
+
+        <!-- Preset Amount Buttons -->
+        <template lwc:if={showPresets}>
+            <fieldset class="amount-grid">
+                <legend class="slds-assistive-text">{labels.ec_label_preset_amount_group}</legend>
+                <template for:each={presetAmountOptions} for:item="option">
+                    <span key={option.value} class="amount-cell">
+                        <input
+                            type="radio"
+                            id={option.inputId}
+                            name={presetName}
+                            value={option.value}
+                            class="visually-hidden-input"
+                            checked={option.isSelected}
+                            onchange={handlePresetAmountSelect}
+                        />
+                        <label for={option.inputId} class="amount-option">{option.label}</label>
+                    </span>
+                </template>
+            </fieldset>
+
+        </template>
+
+        <!-- Custom Amount Input Row -->
+        <div class="custom-amount-field">
+            <label for={customAmountId} class="slds-assistive-text">{labels.ec_label_other_amount}</label>
+            <span id={currencyDescriptionId} class="slds-assistive-text">{currencyAssistiveText}</span>
+            <div class={customAmountRowClass}>
+
+                <template lwc:if={isCurrencyPrefix}>
+                    <span class="currency-adornment currency-adornment-prefix" aria-hidden="true">
+                        {currencySymbol}
+                    </span>
+                </template>
+
+                <input
+                    type="text"
+                    inputmode="decimal"
+                    autocomplete="transaction-amount"
+                    id={customAmountId}
+                    class="custom-amount-input-native"
+                    placeholder={labels.ec_label_other_amount}
+                    value={customAmountDisplay}
+                    aria-describedby={customAmountDescribedBy}
+                    aria-invalid={isAmountInvalid}
+                    oninput={handleCustomAmountInput}
+                    onfocus={handleCustomAmountFocus}
+                    onblur={handleCustomAmountBlur}
+                />
+
+                <template lwc:if={isCurrencySuffix}>
+                    <span class="currency-adornment currency-adornment-suffix" aria-hidden="true">
+                        {currencySymbol}
+                    </span>
+                </template>
+
+            </div>
+
+            <template lwc:if={hasValidationError}>
+                <p id={customAmountErrorId} role="alert" class="amount-error">
+                    {validationError}
+                </p>
+            </template>
+        </div>
+
+        <!-- Announced on remount by focusing the amount field (aria-describedby), not this region. -->
+        <template lwc:if={hasRequiredError}>
+            <p id={amountRequiredErrorId} role="alert" class="amount-error amount-error--form">
+                {requiredError}
+            </p>
+        </template>
+
+        <!-- Rich text: Flow errors from setCustomValidity() may contain markup. -->
+        <template lwc:if={hasExternalError}>
+            <div id={externalErrorId} role="alert" class="amount-error amount-error--form amount-error--external">
+                <lightning-formatted-rich-text value={externalError}></lightning-formatted-rich-text>
+            </div>
+        </template>
+
+    </div>
+</template>

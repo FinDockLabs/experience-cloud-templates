@@ -1,0 +1,187 @@
+<template>
+    <!-- ── Frequency ──────────────────────────────────────────────────────── -->
+    <div class="slds-section slds-is-open">
+        <h3 class="slds-section__title">
+            <span class="slds-truncate" title="Frequency">Frequency</span>
+        </h3>
+        <div class="section-content">
+            <p class="section-hint">
+                Choose the available payment frequencies. At least one is required.
+            </p>
+
+            <div class="slds-form-element">
+                <div class="slds-form-element__control">
+                    <label class="slds-checkbox_toggle slds-grid slds-grid_vertical-align-center">
+                        <input type="checkbox" checked={showOneTime} onchange={handleShowOneTimeChange}/>
+                        <span class="slds-checkbox_faux_container">
+                                <span class="slds-checkbox_faux"></span>
+                            </span>
+                        <span class="slds-form-element__label slds-m-bottom_none slds-p-left_small">One-time</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="slds-form-element frequency-option">
+                <div class="slds-form-element__control">
+                    <label class="slds-checkbox_toggle slds-grid slds-grid_vertical-align-center">
+                        <input type="checkbox" checked={showMonthly} onchange={handleShowMonthlyChange}/>
+                        <span class="slds-checkbox_faux_container">
+                                <span class="slds-checkbox_faux"></span>
+                            </span>
+                        <span class="slds-form-element__label slds-m-bottom_none slds-p-left_small">Monthly</span>
+                    </label>
+                </div>
+            </div>
+
+            <template lwc:if={frequencyError}>
+                <p class="form-error" role="alert">{frequencyError}</p>
+            </template>
+
+            <template lwc:if={showDefaultFrequency}>
+                <div class="default-frequency">
+                    <lightning-combobox
+                            label="Default frequency"
+                            value={defaultFrequency}
+                            options={frequencyOptions}
+                            onchange={handleDefaultFrequencyChange}
+                    ></lightning-combobox>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <hr class="section-divider"/>
+
+    <!-- ── Preset Amounts ──────────────────────────────────────────────────── -->
+    <div class="slds-section slds-is-open">
+        <h3 class="slds-section__title">
+            <span class="slds-truncate" title="Preset amounts">Preset amounts</span>
+        </h3>
+        <div class="section-content">
+
+            <template lwc:if={showOneTime}>
+                <template lwc:if={showBothFrequencies}>
+                    <p class="preset-group-label">One-time</p>
+                </template>
+                <div class="preset-grid">
+                    <template for:each={presetsOneTime} for:item="preset">
+                        <div key={preset.key} class="preset-grid__item">
+                            <div class="amount-input-group">
+                                <span class="amount-symbol">{presetCurrencySymbol}</span>
+                                <input
+                                        type="text"
+                                        inputmode="decimal"
+                                        class="amount-input"
+                                        aria-label={preset.label}
+                                        placeholder="0"
+                                        value={preset.amount}
+                                        data-index={preset.index}
+                                        oninput={handlePresetOTAmountChange}
+                                />
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template lwc:if={showMonthly}>
+                <template lwc:if={showBothFrequencies}>
+                    <p class="preset-group-label">Monthly</p>
+                </template>
+                <div class="preset-grid">
+                    <template for:each={presetsRecurring} for:item="preset">
+                        <div key={preset.key} class="preset-grid__item">
+                            <div class="amount-input-group">
+                                <span class="amount-symbol">{presetCurrencySymbol}</span>
+                                <input
+                                        type="text"
+                                        inputmode="decimal"
+                                        class="amount-input"
+                                        aria-label={preset.label}
+                                        placeholder="0"
+                                        value={preset.amount}
+                                        data-index={preset.index}
+                                        oninput={handlePresetRecAmountChange}
+                                />
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+        </div>
+    </div>
+
+    <hr class="section-divider"/>
+
+    <!-- ── Currency ──────────────────────────────────────────────────────── -->
+    <cpm-flow-field-set label="Currency" description="Enter an ISO 4217 code (e.g. EUR) or select a flow variable that provides the currency at runtime (e.g. the Currency Picker output). Leave blank to use the org's default currency.">
+        <cpm-flow-variable-input
+                name="currencyCode"
+                label="Currency"
+                variant="label-hidden"
+                builder-context-filter-type="String"
+                value={currencyValue}
+                value-type={currencyValueType}
+                builder-context={builderContext}
+                automatic-output-variables={automaticOutputVariables}
+                onvaluechange={handleCurrencyChange}>
+        </cpm-flow-variable-input>
+        <template lwc:if={currencyError}>
+            <p class="form-error" role="alert">{currencyError}</p>
+        </template>
+    </cpm-flow-field-set>
+
+    <hr class="section-divider"/>
+
+    <!-- ── Other Amount ────────────────────────────────────────────────────── -->
+    <div class="slds-section slds-is-open">
+        <h3 class="slds-section__title">
+            <span class="slds-truncate" title="Other amount">Other amount</span>
+        </h3>
+        <div class="section-content">
+            <div class="min-max-grid">
+                <div class="min-max-grid__item">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="min-amount-input">Minimum</label>
+                        <div class="amount-input-group">
+                            <span class="amount-symbol">{presetCurrencySymbol}</span>
+                            <input
+                                    type="text"
+                                    inputmode="decimal"
+                                    id="min-amount-input"
+                                    class="amount-input"
+                                    aria-label="Minimum amount"
+                                    value={minAmount}
+                                    oninput={handleMinAmountInput}
+                                    onchange={handleMinAmountChange}
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="min-max-grid__item">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="max-amount-input">Maximum</label>
+                        <div class="amount-input-group">
+                            <span class="amount-symbol">{presetCurrencySymbol}</span>
+                            <input
+                                    type="text"
+                                    inputmode="decimal"
+                                    id="max-amount-input"
+                                    class="amount-input"
+                                    aria-label="Maximum amount"
+                                    placeholder="No limit"
+                                    value={maxAmount}
+                                    oninput={handleMaxAmountInput}
+                                    onchange={handleMaxAmountChange}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <template lwc:if={minMaxError}>
+                <p class="form-error" role="alert">{minMaxError}</p>
+            </template>
+        </div>
+    </div>
+</template>

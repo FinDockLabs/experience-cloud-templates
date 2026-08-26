@@ -1,0 +1,55 @@
+<template>
+    <div class="slds-assistive-text" aria-live="assertive">{announcementText}</div>
+
+    <div class="stage-progress" role="list" aria-hidden="true">
+
+        <div class="stage-progress__stage" role="listitem">
+            <div class={stage1CircleClass}>
+                <template lwc:if={isStage1Completed}>
+                    <svg viewBox="0 0 24 24" class="stage-progress__checkmark-icon" width="20" height="20">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="1.75"/>
+                        <path d="M8 12.5l2.5 2.5 5-5" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </template>
+                <template lwc:else>
+                    <span class={stage1NumberClass}>1</span>
+                </template>
+            </div>
+            <span class="stage-progress__label">{stage1Label}</span>
+        </div>
+
+        <div class={connectorOneClass} aria-hidden="true"></div>
+
+        <div class="stage-progress__stage" role="listitem">
+            <div class={stage2CircleClass}>
+                <template lwc:if={isStage2Completed}>
+                    <svg viewBox="0 0 24 24" class="stage-progress__checkmark-icon" width="20" height="20">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="1.75"/>
+                        <path d="M8 12.5l2.5 2.5 5-5" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </template>
+                <template lwc:else>
+                    <span class={stage2NumberClass}>2</span>
+                </template>
+            </div>
+            <span class="stage-progress__label">{stage2Label}</span>
+        </div>
+
+        <div class={connectorTwoClass} aria-hidden="true"></div>
+
+        <div class="stage-progress__stage" role="listitem">
+            <div class={stage3CircleClass}>
+                <template lwc:if={isStage3Completed}>
+                    <svg viewBox="0 0 24 24" class="stage-progress__checkmark-icon" width="20" height="20">
+                        <circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="1.75"/>
+                        <path d="M8 12.5l2.5 2.5 5-5" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </template>
+                <template lwc:else>
+                    <span class={stage3NumberClass}>3</span>
+                </template>
+            </div>
+            <span class="stage-progress__label">{stage3Label}</span>
+        </div>
+    </div>
+</template>

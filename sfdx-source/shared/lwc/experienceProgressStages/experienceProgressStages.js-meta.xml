@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <description>Three-stage progress indicator for Experience Cloud flow screens</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Experience Progress Stages</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property
+                name="stage1Label"
+                type="String"
+                label="Stage 1 Label"
+                description="Label displayed below stage 1"
+                role="inputOnly"
+            />
+            <property
+                name="stage2Label"
+                type="String"
+                label="Stage 2 Label"
+                description="Label displayed below stage 2"
+                role="inputOnly"
+            />
+            <property
+                name="stage3Label"
+                type="String"
+                label="Stage 3 Label"
+                description="Label displayed below stage 3"
+                role="inputOnly"
+            />
+            <property
+                name="currentStage"
+                type="Integer"
+                label="Current Stage"
+                description="Current active stage number from 1 to 3"
+                role="inputOnly"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

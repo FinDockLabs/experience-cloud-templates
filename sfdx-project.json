@@ -1,20 +1,60 @@
 {
   "packageDirectories": [
     {
-      "path": "force-app",
-      "default": true
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "sfdx-source/packages/donation-fundraising",
+      "default": false,
+      "package": "FinDock Experiences - Fundraising",
+      "versionDescription": ""
     },
     {
-      "path": "flow-templates",
-      "default": false
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "sfdx-source/packages/donation-fundraising-uk",
+      "default": true,
+      "package": "FinDock Experiences - Fundraising UK",
+      "versionDescription": ""
     },
     {
-      "path": "donation-page",
-      "default": false
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "sfdx-source/packages/donation-npsp",
+      "default": false,
+      "package": "FinDock Experiences - NPSP",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "sfdx-source/packages/checkout",
+      "default": false,
+      "package": "FinDock Experiences - Checkout",
+      "versionDescription": ""
+    },
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "sfdx-source/packages/lwc-procode",
+      "default": false,
+      "package": "FinDock Experiences - Pro-code LWC",
+      "versionDescription": ""
     }
   ],
   "name": "experience-cloud-templates",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "67.0"
+  "sourceApiVersion": "67.0",
+  "packageAliases": {
+    "FinDock Experiences - Fundraising": "0HoP400000002mbKAA",
+    "FinDock Experiences - Fundraising@0.1.0-1": "04tP4000001gLSTIA2",
+    "FinDock Experiences - Fundraising UK": "0HoP400000002oDKAQ",
+    "FinDock Experiences - Fundraising UK@0.1.0-1": "04tP4000001gLPFIA2",
+    "FinDock Experiences - NPSP": "0HoP400000002jNKAQ",
+    "FinDock Experiences - NPSP@0.1.0-1": "04tP4000001gECTIA2",
+    "FinDock Experiences - Checkout": "0HoP400000002kzKAA",
+    "FinDock Experiences - Checkout@0.1.0-1": "04tP4000001gL2fIAE",
+    "FinDock Experiences - Pro-code LWC": "0HoP400000002ppKAA",
+    "FinDock Experiences - Pro-code LWC@0.1.0-1": "04tP4000001gLQrIAM"
+  }
 }

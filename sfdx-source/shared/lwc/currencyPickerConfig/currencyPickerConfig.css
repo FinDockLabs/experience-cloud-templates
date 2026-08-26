@@ -1,0 +1,26 @@
+.cpe {
+    display: flex;
+    flex-direction: column;
+    gap: var(--slds-g-spacing-5);
+    padding: var(--slds-g-spacing-4) var(--slds-g-spacing-1);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--slds-g-spacing-1);
+}
+
+.field__help {
+    margin: 0;
+    font-size: var(--slds-g-font-scale-neg-1);
+    line-height: var(--slds-g-line-height-text);
+    color: var(--slds-g-color-neutral-base-50);
+}
+
+.field__error {
+    margin: 0;
+    font-size: var(--slds-g-font-scale-neg-1);
+    line-height: var(--slds-g-line-height-text);
+    color: var(--slds-g-color-error-base-50);
+}

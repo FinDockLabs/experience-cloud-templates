@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <description>Currency selector. Resolves the active payment currency, emits it on load, and collapses to a fixed currency when only one is available. Usable on an Experience Cloud page and as a Flow screen component.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Currency selector</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen" configurationEditor="c-currency-picker-config">
+            <property name="allowedCurrencies" type="String" role="inputOnly" label="Allowed currencies (CSV)"/>
+            <property name="defaultCurrency" type="String" role="inputOnly" label="Default currency (ISO code or Flow variable)"/>
+            <property name="value" type="String" role="outputOnly" label="Selected currency (ISO)"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

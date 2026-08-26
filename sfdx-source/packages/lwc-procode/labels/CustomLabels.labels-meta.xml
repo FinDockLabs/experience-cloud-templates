@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- Payment Form — field labels -->
+    <labels>
+        <fullName>ec_label_first_name</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>First name field label</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_last_name</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Last name field label</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_email_address</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email address field label</shortDescription>
+        <value>Email Address</value>
+    </labels>
+    <labels>
+        <fullName>ec_placeholder_first_name</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>First name field placeholder</shortDescription>
+        <value>First name</value>
+    </labels>
+    <labels>
+        <fullName>ec_placeholder_last_name</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Last name field placeholder</shortDescription>
+        <value>Last name</value>
+    </labels>
+    <labels>
+        <fullName>ec_error_invalid_name</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error shown when a name field contains only whitespace</shortDescription>
+        <value>Please enter a valid name.</value>
+    </labels>
+    <labels>
+        <fullName>ec_placeholder_email</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email field placeholder</shortDescription>
+        <value>name@example.com</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_frequency_one_time</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Frequency option: one-time payment</shortDescription>
+        <value>One-time</value>
+    </labels>
+    <labels>
+        <fullName>ec_label_frequency_recurring</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Frequency option: recurring payment</shortDescription>
+        <value>Monthly</value>
+    </labels>
+    <labels>
+        <fullName>ec_header_personal_details</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Section header above the payer contact fields</shortDescription>
+        <value>Enter your personal details</value>
+    </labels>
+    <labels>
+        <fullName>ec_header_select_payment_method</fullName>
+        <categories>FinDock Experience Cloud Component</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Section header above the payment method selector</shortDescription>
+        <value>Select a payment method</value>
+    </labels>
+    <!-- Currency picker -->
+</CustomLabels>
