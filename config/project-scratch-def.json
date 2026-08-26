@@ -1,0 +1,17 @@
+{
+  "orgName": "FinDock EXC Templates CI",
+  "edition": "Developer",
+  "namespace": "",
+  "features": ["EnableSetPasswordInApi", "Communities", "DigitalExperiences"],
+  "settings": {
+    "experienceBundleSettings": {
+      "enableExperienceBundleMetadata": true
+    },
+    "communitiesSettings": {
+      "enableNetworksEnabled": true
+    },
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    }
+  }
+}
