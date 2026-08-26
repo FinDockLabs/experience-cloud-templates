@@ -20,6 +20,11 @@ END = "<!-- INSTALL_LINK:END -->"
 LOGIN = "https://login.salesforce.com/packaging/installPackage.apexp?p0="
 TEST = "https://test.salesforce.com/packaging/installPackage.apexp?p0="
 
+# Buttons are shields.io badges in the Salesforce brand colour
+BADGE = "https://img.shields.io/badge/"
+BADGE_PROD = BADGE + "Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge"
+BADGE_SANDBOX = BADGE + "Install-Sandbox-6B7A8F?style=for-the-badge"
+
 
 def version_key(version: str) -> tuple:
     """0.1.0-1 -> (0, 1, 0, 1), so versions sort numerically rather than as text."""
@@ -41,9 +46,11 @@ def latest_versions(aliases: dict) -> dict:
 
 def render(version: str, subscriber_id: str) -> str:
     return (
-        f"**Install version {version}:** "
-        f"[production or Developer org]({LOGIN}{subscriber_id}) · "
-        f"[sandbox]({TEST}{subscriber_id})"
+        f"[![Install in a production or Developer org]({BADGE_PROD})]"
+        f"({LOGIN}{subscriber_id})\n"
+        f"[![Install in a sandbox]({BADGE_SANDBOX})]"
+        f"({TEST}{subscriber_id})\n\n"
+        f"Version {version}"
     )
 
 

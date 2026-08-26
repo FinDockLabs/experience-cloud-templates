@@ -9,7 +9,10 @@ This is the code-first alternative to using our managed LWCs directly in Flows. 
 Note: This deploys an example LWC wrapper around FinDock's components. Both out of the box components are part of the FinDock managed package and can be used without the code in this template.
 
 <!-- INSTALL_LINK:START -->
-**Install version 0.1.0-1:** [production or Developer org](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gLQrIAM) · [sandbox](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gLQrIAM)
+[![Install in a production or Developer org](https://img.shields.io/badge/Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gLQrIAM)
+[![Install in a sandbox](https://img.shields.io/badge/Install-Sandbox-6B7A8F?style=for-the-badge)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gLQrIAM)
+
+Version 0.1.0-1
 <!-- INSTALL_LINK:END -->
 
 ## Components

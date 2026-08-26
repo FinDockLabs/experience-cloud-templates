@@ -2,7 +2,10 @@
 
 ## Deploy
 <!-- INSTALL_LINK:START -->
-**Install version 0.1.0-1:** [production or Developer org](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gL2fIAE) · [sandbox](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gL2fIAE)
+[![Install in a production or Developer org](https://img.shields.io/badge/Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gL2fIAE)
+[![Install in a sandbox](https://img.shields.io/badge/Install-Sandbox-6B7A8F?style=for-the-badge)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gL2fIAE)
+
+Version 0.1.0-1
 <!-- INSTALL_LINK:END -->
 
 This template contains a Flow template to help you get started with building digital payment experiences using Experience Cloud and FinDock Payment Experiences. The Contact Flow is designed for commercial use cases such as invoices, subscriptions and recovering failed payments.
