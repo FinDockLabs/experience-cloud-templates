@@ -1,20 +1,12 @@
 name: Package CI
 
 # EXC templates: self-contained org-dependent unlocked packages (one variant per org).
-# The build assembles sfdx-source/shared/ into each variant, then runs
-# sf package version create.
-# - On push to main: jest + build beta versions + install test in a scratch org with Core.
-# - On tag vX.Y.Z: promote versions to released.
-#
-# Required secrets (Settings -> Secrets and variables -> Actions):
-#   SF_DEVHUB_AUTH_URL   - DevHub sfdxAuthUrl (sf org display --verbose --json | jq -r .result.sfdxAuthUrl)
-#   CORE_INSTALL_KEY     - (optional) installation key for FinDock Core, if required
-#   CORE_PACKAGE_VERSION - 04t id of the FinDock Core version for the install test
+# Runs the shared + variant Jest suite on every PR and push to main.
+# Package version creation/promotion is done manually via scripts/create-package-versions.sh.
 
 on:
   push:
     branches: [ main ]
-    tags: [ 'v*' ]
   pull_request:
     branches: [ main ]
 
@@ -28,52 +20,3 @@ jobs:
         with: { node-version: '20' }
       - run: npm ci
       - run: npm run test:unit -- --coverage
-
-  build-versions:
-    name: Build beta package versions
-    needs: test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install sf CLI
-        run: npm install -g @salesforce/cli
-      - name: Auth DevHub
-        run: |
-          echo "${{ secrets.SF_DEVHUB_AUTH_URL }}" > authurl.txt
-          sf org login sfdx-url --sfdx-url-file authurl.txt --alias DevHub --set-default-dev-hub
-      - name: Assemble + create beta versions + collect install links
-        run: DEVHUB=DevHub ./scripts/create-package-versions.sh version | tee install-links.txt
-      # Each package is self-contained; org-dependent packages are only validated at
-      # install time, so install into a scratch org with Core to catch broken Core
-      # references before they reach a customer.
-      - name: Install test (scratch org with Core)
-        run: |
-          sf org create scratch --definition-file config/project-scratch-def.json \
-            --alias ci --duration-days 1 --set-default --wait 20
-          sf package install --package "${{ secrets.CORE_PACKAGE_VERSION }}" \
-            --target-org ci --wait 20 --no-prompt \
-            ${{ secrets.CORE_INSTALL_KEY && format('--installation-key {0}', secrets.CORE_INSTALL_KEY) || '' }}
-          for id in $(grep -oE '04t[A-Za-z0-9]+' install-links.txt | sort -u); do
-            echo "Installing $id"; sf package install --package "$id" --target-org ci --wait 20 --no-prompt
-          done
-      - uses: actions/upload-artifact@v4
-        with: { name: install-links, path: install-links.txt }
-
-  promote:
-    name: Promote to released
-    if: startsWith(github.ref, 'refs/tags/v')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: npm install -g @salesforce/cli
-      - name: Auth DevHub
-        run: |
-          echo "${{ secrets.SF_DEVHUB_AUTH_URL }}" > authurl.txt
-          sf org login sfdx-url --sfdx-url-file authurl.txt --alias DevHub --set-default-dev-hub
-      - name: Promote latest versions
-        run: |
-          for pkg in "FinDock Experiences - Fundraising" "FinDock Experiences - Fundraising + GiftAid" "FinDock Experiences - NPSP" "FinDock Experiences - Checkout" "FinDock Experiences - Pro-code LWC"; do
-            echo "Promoting: $pkg"
-            sf package version promote --package "$pkg" --target-dev-hub DevHub --no-prompt || true
-          done
