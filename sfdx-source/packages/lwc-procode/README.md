@@ -2,7 +2,7 @@
 
 This template contains building blocks to help you build custom Lightning Web Components (LWC) for digital payment experiences using Experience Cloud and FinDock Payment Experiences. Use this template when you need full control over layout, validation, step, navigation, etc. Your custom LWC leverages the built-in capabilities of FinDock's [Payment Method Selector](https://docs.findock.com/docs/july-26/payments/payment-method-selector) and [Pay Button](https://docs.findock.com/docs/july-26/payments/pay-button) managed LWCs.
 
-This is the code-first alternative to using our managed LWCs directly in Flows. For other options, see [Templates for FinDock Payment Experiences](https://github.com/FinDockLabs/experience-cloud-templates). 
+This is the code-first alternative to using our managed LWCs directly in Flows. For other options, see [Templates for FinDock Payment Experiences](https://github.com/FinDockLabs/payment-experiences-templates).
 
 ## Deploy
 
@@ -14,6 +14,8 @@ Note: This deploys an example LWC wrapper around FinDock's components. Both out 
 
 Version 0.1.0-1
 <!-- INSTALL_LINK:END -->
+
+> **Compatibility:** Install only one template variant per org. See the [package compatibility notes](../../../README.md#package-compatibility). Checkout may coexist with another variant.
 
 ## Components
 
@@ -64,7 +66,7 @@ Example — embedding the standalone selector in a custom LWC:
 ## Installation
 
 1. Install the package using the link above.
-2. If the site needs to accept payments from unauthenticated (guest) users, complete the **Experience Cloud & Guest User Setup** steps in [experience-cloud-templates](https://github.com/FinDockLabs/experience-cloud-templates) first — payments will fail at runtime otherwise, even though the page renders correctly. For guest users, also assign the **FinDockLabs Payment Guest Access** permission set.
+2. If the site needs to accept payments from unauthenticated (guest) users, complete the **Experience Cloud & Guest User Setup** steps in [payment-experiences-templates](https://github.com/FinDockLabs/payment-experiences-templates) first — payments will fail at runtime otherwise, even though the page renders correctly. For guest users, also assign the **FinDockLabs Payment Guest Access** permission set.
 3. Run `npm run generate:config -- --org <alias>` to generate `paymentMethodConfiguration.js` from your org's active payment methods, then fill in the `target` field for each entry. See [Payment Method Configuration](#payment-method-configuration) below for details.
 4. Update `SuccessURL` and `FailureURL` in `paymentForm.js` (`_updatePaymentIntentContext`) to point to pages within your Experience Cloud site. These are currently hardcoded (`https://example.com/...`); they will be exposed as `c-payment-form` design properties in a later release so they can be configured in Experience Builder without editing code.
 5. Set the amount, currency, and frequency by editing the `@api` defaults in `paymentForm.js` (see [Configuration Properties](#c-payment-form--configuration-properties)) — they are not exposed in Experience Builder. Then add `c-payment-form` to your Experience Cloud page.

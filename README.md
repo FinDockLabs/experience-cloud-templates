@@ -32,6 +32,10 @@ If you prefer to build a fully custom implementation, on Salesforce or outside o
 **Any use-case**
 - [LWC](sfdx-source/packages/lwc-procode): pro-code template for custom LWCs when you need full code control over layout, validation, navigation, etc. without using Flow. Components integrate with FinDock Payment API and are fully configurable.
 
+## Package compatibility
+
+Template packages that include shared components are mutually exclusive, so install only one such variant per org. Checkout is the exception and can coexist with another variant because it contains no shared components.
+
 
 ## Experience Cloud & Guest User Setup
 

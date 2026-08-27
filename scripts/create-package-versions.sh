@@ -5,7 +5,8 @@
 # Model (one variant per customer org):
 #   Each variant package is SELF-CONTAINED — the shared source pool in
 #   sfdx-source/shared/ (LWC, Apex, custom labels) is assembled into the variant
-#   package directory at build time, then the working tree is restored.
+#   package staging directory at build time. The tracked working tree is never
+#   modified.
 #   sfdx-source/shared/ is kept as a single source copy and is NOT a standalone
 #   package. Assembly is a plain copy — never symlinks.
 #
@@ -23,10 +24,12 @@
 # Why org-dependent:
 #   FinDock Core (PaymentHub) is currently 1GP — no build-time dependency can be
 #   declared on it. Packages are created with --org-dependent: references to Core
-#   are validated at install time in the target org (any active Core version).
+#   are validated at install time in the target org. The same template version
+#   can therefore be used with different Core versions, provided that the target
+#   org contains every Core metadata contract referenced by the template.
 #
 # Requirements: sf CLI, jq, python3 (reads packageAliases in 'create'),
-#               an authenticated DevHub, a clean git tree.
+#               an authenticated DevHub, and clean package/shared source.
 #
 # Usage:
 #   ./scripts/create-package-versions.sh create                        # one-time: create the packages
@@ -44,6 +47,16 @@ SRC_ROOT="sfdx-source"
 SHARED="$SRC_ROOT/shared"
 PKG_ROOT="$SRC_ROOT/packages"
 VARIANTS=(donation-fundraising donation-fundraising-uk donation-npsp checkout lwc-procode)
+STAGE_DIR=""
+
+cleanup() {
+  if [ -n "$STAGE_DIR" ] && [ -d "$STAGE_DIR" ]; then
+    rm -rf -- "$STAGE_DIR"
+  fi
+  STAGE_DIR=""
+}
+
+trap cleanup EXIT INT TERM
 
 pkg_name() {
   case "$1" in
@@ -70,8 +83,12 @@ shared_mode() {
 }
 
 assemble() {
-  local v="$1" dir="$PKG_ROOT/$1"
+  local v="$1" src="$PKG_ROOT/$1"
   local mode; mode="$(shared_mode "$v")"
+
+  cleanup
+  STAGE_DIR=$(mktemp -d "${TMPDIR:-/tmp}/findock-exc-${v}.XXXXXX")
+  cp -R "$src"/. "$STAGE_DIR"/
 
   case "$mode" in
     INVALID:*)
@@ -81,23 +98,16 @@ assemble() {
       echo "    shared: none" ;;
     all)
       # Copies the whole shared pool: LWC bundles, Apex classes, shared labels.
-      mkdir -p "$dir/lwc" "$dir/classes" "$dir/labels"
-      cp -R "$SHARED"/lwc/.     "$dir/lwc/"
-      cp -R "$SHARED"/classes/. "$dir/classes/"
+      mkdir -p "$STAGE_DIR/lwc" "$STAGE_DIR/classes" "$STAGE_DIR/labels"
+      cp -R "$SHARED"/lwc/.     "$STAGE_DIR/lwc/"
+      cp -R "$SHARED"/classes/. "$STAGE_DIR/classes/"
       # Two label files end up side by side: SharedLabels (from the pool) and the
       # variant's own CustomLabels. CustomLabel is deployed one label at a time, so
       # both containers are read and no merge is needed. Each label must appear in
       # exactly one of the two files, otherwise the deploy fails as a duplicate.
-      cp "$SHARED/labels/SharedLabels.labels-meta.xml" "$dir/labels/"
+      cp "$SHARED/labels/SharedLabels.labels-meta.xml" "$STAGE_DIR/labels/"
       echo "    shared: all" ;;
   esac
-}
-
-restore() {
-  # Drop the assembled-in shared source, keeping shared.manifest — it is a build
-  # input, not build output.
-  git checkout -- "$PKG_ROOT/$1" 2>/dev/null || true
-  git clean -fdq -e shared.manifest "$PKG_ROOT/$1" 2>/dev/null || true
 }
 
 cmd="${1:-version}"
@@ -121,8 +131,8 @@ case "$cmd" in
     ;;
 
   version)
-    if [ -n "$(git status --porcelain "$PKG_ROOT" 2>/dev/null)" ]; then
-      echo "ERROR: $PKG_ROOT/ has uncommitted changes. Commit or stash first (build restores the tree)."; exit 1
+    if [ -n "$(git status --porcelain --untracked-files=all -- "$PKG_ROOT" "$SHARED" sfdx-project.json 2>/dev/null)" ]; then
+      echo "ERROR: package/shared source or sfdx-project.json has uncommitted changes. Commit or stash first."; exit 1
     fi
     # Versions the variants named as arguments, or all of them when none are given.
     shift || true
@@ -136,10 +146,20 @@ case "$cmd" in
       name="$(pkg_name "$v")"
       echo ">>> assemble + version: $name"
       assemble "$v"
-      VERSION_ID=$(sf package version create --package "$name" \
-        --installation-key-bypass --code-coverage --wait 60 \
-        --target-dev-hub "$DEVHUB" --json | jq -r '.result.SubscriberPackageVersionId')
-      restore "$v"
+      if ! result_json=$(sf package version create --package "$name" --path "$STAGE_DIR" \
+        --installation-key-bypass --wait 60 \
+        --target-dev-hub "$DEVHUB" --json); then
+        echo "$result_json" >&2
+        exit 1
+      fi
+      if ! VERSION_ID=$(jq -er \
+        '.result.SubscriberPackageVersionId | select(type == "string" and startswith("04t"))' \
+        <<< "$result_json"); then
+        echo "ERROR: package version creation did not return a valid 04t SubscriberPackageVersionId." >&2
+        echo "$result_json" >&2
+        exit 1
+      fi
+      cleanup
       echo "    SubscriberPackageVersionId: ${VERSION_ID}"
       echo "    Install link (prod/dev): https://login.salesforce.com/packaging/installPackage.apexp?p0=${VERSION_ID}"
       echo "    Install link (sandbox):  https://test.salesforce.com/packaging/installPackage.apexp?p0=${VERSION_ID}"

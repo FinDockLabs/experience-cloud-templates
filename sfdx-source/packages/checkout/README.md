@@ -8,9 +8,11 @@
 Version 0.1.0-1
 <!-- INSTALL_LINK:END -->
 
+> **Compatibility:** Install only one template variant per org. See the [package compatibility notes](../../../README.md#package-compatibility). Checkout may coexist with another variant.
+
 This template contains a Flow template to help you get started with building digital payment experiences using Experience Cloud and FinDock Payment Experiences. The Contact Flow is designed for commercial use cases such as invoices, subscriptions and recovering failed payments.
 
-This template is meant to be customized and extended to fit specific use cases and requirements. For other options, see [Templates for FinDock Payment Experiences](https://github.com/FinDockLabs/experience-cloud-templates). 
+This template is meant to be customized and extended to fit specific use cases and requirements. For other options, see [Templates for FinDock Payment Experiences](https://github.com/FinDockLabs/payment-experiences-templates).
 
 *Key features*
 - Collect new one-time payments

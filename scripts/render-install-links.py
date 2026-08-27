@@ -60,22 +60,25 @@ def main() -> int:
     project = json.loads((root / "sfdx-project.json").read_text())
     versions = latest_versions(project.get("packageAliases") or {})
 
-    stale, written, skipped = [], 0, []
+    stale, written, errors = [], 0, []
 
     for entry in project["packageDirectories"]:
         name = entry["package"]
         readme = root / entry["path"] / "README.md"
 
         if not readme.exists():
-            skipped.append(f"{entry['path']}: no README.md")
+            errors.append(f"{entry['path']}: no README.md")
             continue
         if name not in versions:
-            skipped.append(f"{name}: no package version yet")
+            errors.append(f"{name}: no package version yet")
             continue
 
         text = readme.read_text()
-        if START not in text or END not in text:
-            skipped.append(f"{readme.relative_to(root)}: missing the {START} marker")
+        if text.count(START) != 1 or text.count(END) != 1 or text.index(START) > text.index(END):
+            errors.append(
+                f"{readme.relative_to(root)}: expected exactly one ordered "
+                f"{START} / {END} marker pair"
+            )
             continue
 
         version, subscriber_id = versions[name]
@@ -93,8 +96,10 @@ def main() -> int:
             readme.write_text(updated)
             written += 1
 
-    for note in skipped:
-        print(f"  skipped {note}", file=sys.stderr)
+    if errors:
+        print("Install-link configuration errors:", file=sys.stderr)
+        for error in errors:
+            print(f"  {error}", file=sys.stderr)
 
     if check:
         if stale:
@@ -102,10 +107,13 @@ def main() -> int:
             for path in stale:
                 print(f"  {path}", file=sys.stderr)
             print("Run: python3 scripts/render-install-links.py", file=sys.stderr)
+        if stale or errors:
             return 1
         print("Install links are up to date")
         return 0
 
+    if errors:
+        return 1
     print(f"Updated {written} README(s)")
     return 0
 
