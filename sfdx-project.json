@@ -47,7 +47,6 @@
   "sourceApiVersion": "67.0",
   "packageAliases": {
     "FinDock Experiences - Fundraising": "0HoP400000002mbKAA",
-    "FinDock Experiences - Fundraising@0.1.0-1": "04tP4000001gLSTIA2",
     "FinDock Experiences - Fundraising UK": "0HoP400000002oDKAQ",
     "FinDock Experiences - Fundraising UK@0.1.0-1": "04tP4000001gLPFIA2",
     "FinDock Experiences - NPSP": "0HoP400000002jNKAQ",
@@ -55,6 +54,7 @@
     "FinDock Experiences - Checkout": "0HoP400000002kzKAA",
     "FinDock Experiences - Checkout@0.1.0-1": "04tP4000001gL2fIAE",
     "FinDock Experiences - Pro-code LWC": "0HoP400000002ppKAA",
-    "FinDock Experiences - Pro-code LWC@0.1.0-1": "04tP4000001gLQrIAM"
+    "FinDock Experiences - Pro-code LWC@0.1.0-1": "04tP4000001gLQrIAM",
+    "FinDock Experiences - Fundraising@0.1.0-2": "04tP4000001gUsLIAU"
   }
 }

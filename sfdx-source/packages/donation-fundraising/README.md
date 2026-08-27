@@ -1,9 +1,9 @@
 # Experience Cloud Donation Flows for Fundraising (NPC/EDU)
 <!-- INSTALL_LINK:START -->
-[![Install in a production or Developer org](https://img.shields.io/badge/Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gLSTIA2)
-[![Install in a sandbox](https://img.shields.io/badge/Install-Sandbox-6B7A8F?style=for-the-badge)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gLSTIA2)
+[![Install in a production or Developer org](https://img.shields.io/badge/Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gUsLIAU)
+[![Install in a sandbox](https://img.shields.io/badge/Install-Sandbox-6B7A8F?style=for-the-badge)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gUsLIAU)
 
-Version 0.1.0-1
+Version 0.1.0-2
 <!-- INSTALL_LINK:END -->
 
 This template contains Flow templates to help you get started with building digital payment experiences using Experience Cloud and FinDock Payment Experiences. The flow included are designed for Salesforce Fundraising:
