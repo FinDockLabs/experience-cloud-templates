@@ -2,8 +2,8 @@
 
 ## Deploy
 <!-- INSTALL_LINK:START -->
-[![Install in a production or Developer org](https://img.shields.io/badge/Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge)](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gL2fIAE)
-[![Install in a sandbox](https://img.shields.io/badge/Install-Sandbox-6B7A8F?style=for-the-badge)](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gL2fIAE)
+<a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gL2fIAE" target="_blank" rel="noopener noreferrer"><img alt="Install in a production or Developer org" src="https://img.shields.io/badge/Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge"></a>
+<a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gL2fIAE" target="_blank" rel="noopener noreferrer"><img alt="Install in a sandbox" src="https://img.shields.io/badge/Install-Sandbox-6B7A8F?style=for-the-badge"></a>
 
 Version 0.1.0-1
 <!-- INSTALL_LINK:END -->

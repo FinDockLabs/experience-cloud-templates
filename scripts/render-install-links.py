@@ -46,10 +46,10 @@ def latest_versions(aliases: dict) -> dict:
 
 def render(version: str, subscriber_id: str) -> str:
     return (
-        f"[![Install in a production or Developer org]({BADGE_PROD})]"
-        f"({LOGIN}{subscriber_id})\n"
-        f"[![Install in a sandbox]({BADGE_SANDBOX})]"
-        f"({TEST}{subscriber_id})\n\n"
+        f'<a href="{LOGIN}{subscriber_id}" target="_blank" rel="noopener noreferrer">'
+        f'<img alt="Install in a production or Developer org" src="{BADGE_PROD}"></a>\n'
+        f'<a href="{TEST}{subscriber_id}" target="_blank" rel="noopener noreferrer">'
+        f'<img alt="Install in a sandbox" src="{BADGE_SANDBOX}"></a>\n\n'
         f"Version {version}"
     )
 
