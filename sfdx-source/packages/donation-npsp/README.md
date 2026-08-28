@@ -28,9 +28,10 @@ Collect Gift Aid from UK donors
 ## Installation
 1. Install the package using the link above.
 2. Assign the **FinDockLabs Donation Flow Guest Access** permission set to your Experience Cloud site guest user.
-3. Go to the donation Flow -> Payment Screen -> Payment Method Selection component
+3. Complete the **FinDock Payer** permission set group assignment described in [Experience Cloud & Guest User Setup](https://github.com/FinDockLabs/payment-experiences-templates#experience-cloud--guest-user-setup).
+4. Go to the donation Flow -> Payment Screen -> Payment Method Selection component
    - configure at least some payment methods
-4. Configure the [payment intent](https://docs.findock.com/docs/july-26/payments/pay-button) (add at least a success and failure URLs and verify the mapping matches your use case).
-5. Activate your flow.
-6. Go to the Experience Cloud Administration -> Preferences -> enable "Allow guest users to access public APIs".
+5. Configure the [payment intent](https://docs.findock.com/docs/july-26/payments/pay-button) (add at least a success and failure URLs and verify the mapping matches your use case).
+6. Activate your flow.
+7. Go to the Experience Cloud Administration -> Preferences -> enable "Allow guest users to access public APIs".
 7. Add the flow to your Experience Cloud site.

@@ -42,7 +42,7 @@ Template packages that include shared components are mutually exclusive, so inst
 The steps below apply to every payment template in this project family — Flow-based or LWC-based — for any page that needs to accept payments from unauthenticated (guest) users. Each sub-repo's README links back here instead of repeating these steps.
 
 1. Follow [these instructions](https://help.salesforce.com/s/articleView?id=experience.rss_flow_guestuser.htm&type=5) to set up Guest User access for your Experience Cloud site.
-2. The **FinDock Experience Cloud permission set** must be assigned to the site's Guest User.
+2. The **FinDock Payer** permission set group must be assigned to the site's Guest User.
 3. Go to Experience Cloud Administration → Preferences → enable **Allow guest users to access public APIs**.
 
 Install the template package before deploying the site bundle — the site embeds the flow, which renders the shared components.
