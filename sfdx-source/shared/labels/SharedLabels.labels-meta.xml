@@ -112,6 +112,7 @@
         <shortDescription>Assistive text for the preset donation amount group</shortDescription>
         <value>Select a preset donation amount</value>
     </labels>
+    <!-- Currency (currencyPicker / currencyUtils) -->
     <labels>
         <fullName>ec_label_currency</fullName>
         <categories>FinDock Experience Cloud Component</categories>
