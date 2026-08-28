@@ -48,13 +48,13 @@
   "packageAliases": {
     "FinDock Experiences - Fundraising": "0HoP400000002mbKAA",
     "FinDock Experiences - Fundraising UK": "0HoP400000002oDKAQ",
-    "FinDock Experiences - Fundraising UK@0.1.0-1": "04tP4000001gLPFIA2",
     "FinDock Experiences - NPSP": "0HoP400000002jNKAQ",
-    "FinDock Experiences - NPSP@0.1.0-1": "04tP4000001gECTIA2",
     "FinDock Experiences - Checkout": "0HoP400000002kzKAA",
-    "FinDock Experiences - Checkout@0.1.0-1": "04tP4000001gL2fIAE",
     "FinDock Experiences - Pro-code LWC": "0HoP400000002ppKAA",
-    "FinDock Experiences - Pro-code LWC@0.1.0-1": "04tP4000001gLQrIAM",
-    "FinDock Experiences - Fundraising@0.1.0-2": "04tP4000001gUsLIAU"
+    "FinDock Experiences - Fundraising@0.1.0-3": "04tP4000001gedBIAQ",
+    "FinDock Experiences - Fundraising UK@0.1.0-2": "04tP4000001geenIAA",
+    "FinDock Experiences - NPSP@0.1.0-2": "04tP4000001gegPIAQ",
+    "FinDock Experiences - Checkout@0.1.0-2": "04tP4000001gei1IAA",
+    "FinDock Experiences - Pro-code LWC@0.1.0-2": "04tP4000001gejdIAA"
   }
 }
