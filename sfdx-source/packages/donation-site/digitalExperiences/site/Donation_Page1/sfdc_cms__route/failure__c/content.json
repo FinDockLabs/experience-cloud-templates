@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Failure",
+  "contentBody" : {
+    "activeViewId" : "Failure",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-failure",
+    "urlPrefix" : "failure"
+  },
+  "urlName" : "failure"
+}

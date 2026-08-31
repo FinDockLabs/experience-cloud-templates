@@ -1,0 +1,50 @@
+/*
+ * Your global styles here
+ */
+html,
+body {
+    height: 100%;
+}
+
+html {
+    background: white;
+}
+
+body {
+    margin: 0;
+}
+
+/*
+ * Header back-link underline.
+ * Applied directly to the <a> element to prevent WAVE accessibility
+ * false positives caused by standard component styling on nested <span> tags.
+ */
+header a {
+    text-decoration: underline;
+}
+
+header a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+/*
+ * WCAG 2.4.11 Focus Not Obscured.
+ * Applies scroll-margin-top to ensure focused elements aren't trapped
+ * under sticky headers. Adjust 4rem if custom branding increases header height.
+ */
+:focus-visible {
+    scroll-margin-top: 4rem;
+}
+
+/*
+ * WCAG 2.4.7 / 2.4.11 — footer link focus indicator.
+ * Uses currentColor: inherits from the branding-set LinkColor so the
+ * outline is always the same hue as the link text, automatically adapting
+ * to Theme configurations in Experience Builder.
+ */
+footer a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    text-decoration: underline;
+}
