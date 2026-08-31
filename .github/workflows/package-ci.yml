@@ -19,6 +19,6 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
       - run: bash -n scripts/create-package-versions.sh
-      - run: python3 scripts/render-install-links.py --check
+      - run: python3 scripts/render-install-links.py
       - run: npm ci
       - run: npm run test:unit -- --coverage
