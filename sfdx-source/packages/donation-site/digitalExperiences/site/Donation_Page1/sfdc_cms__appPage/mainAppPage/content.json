@@ -1,0 +1,13 @@
+{
+  "type" : "sfdc_cms__appPage",
+  "title" : "main",
+  "contentBody" : {
+    "currentThemeId" : "Build_Your_Own_LWR",
+    "favIconAssetRef" : "MCVJWDWL2FPJDRLIEGYWO6EYKR3M",
+    "headMarkup" : "<title>Welcome to LWC Communities!</title>\n<link rel=\"shortcut icon\" href=\"{ basePath }/sfsites/c/resource/favicon\" /> \n\n<!-- branding stylesheets -->\n\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/slds/salesforce-lightning-design-system-part1.css?{ versionKey }\"/>\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/slds/salesforce-lightning-design-system-part2.css?{ versionKey }\"/>\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/slds/salesforce-lightning-design-system-part3.css?{ versionKey }\"/>\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/slds/salesforce-lightning-design-system-part4.css?{ versionKey }\"/>\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/dxp-site-spacing-styling-hooks.min.css?{ versionKey }\" />\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/dxp-styling-hooks.min.css?{ versionKey }\" />\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/dxp-slds-extensions.min.css?{ versionKey }\" />\n\n\n\n<!-- branding stylesheets-->\n\n<link rel=\"stylesheet\" href=\"{ styles/styles.css }\" />\n<link rel=\"stylesheet\" href=\"{ styles/print.css }\" media=\"print\"/>\n<link rel=\"stylesheet\" href=\"{ basePath }/sfsites/c/resource/findockAssets/dxp-styles.css?{ versionKey }\" />\n<style>\n    .photo {\n        border-radius: 50%;\n        overflow: hidden;\n        display: block;\n        height: 40rem;\n        width: 40rem;\n    }\n    \n    .flow {\n        border-radius: 16px;\n        border: 1px solid #E5E7EB;\n        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10), 0 1px 2px -1px rgba(0, 0, 0, 0.10);\n    }\n    \n    .flow flowruntime-flow {\n        height: 100%;\n  \t\tborder-radius: 16px;\n    }\n    @media (min-width: 769px) {\n        .flow flowruntime-flow {\n            padding: 3rem;\n        }\n    }\n    \n    .slds-theme_success {\n        --dxp-g-success: #E6F7F3;\n\t\t--dxp-g-success-contrast: #0A5748;\n        color: var(--dxp-g-success-contrast);\n  \t\tbackground-color: var(--dxp-g-success);\n  \t\tborder-color: #9DD9CA !important;\n  \t\tborder-radius: var(--dxp-s-form-element-radius-border);\n  \t\tborder: var(--dxp-s-form-element-width-border) solid;\n    }\n    .slds-theme_success .slds-icon {\n        fill: var(--dxp-g-brand);\n    }\n    .slds-progress__item.slds-is-active .slds-progress__marker {\n        border-color: var(--dxp-g-brand);\n    }\n</style>",
+    "isLockerServiceEnabled" : true,
+    "isRelaxedCSPLevel" : true,
+    "templateName" : "talon-template-byo"
+  },
+  "urlName" : "main"
+}

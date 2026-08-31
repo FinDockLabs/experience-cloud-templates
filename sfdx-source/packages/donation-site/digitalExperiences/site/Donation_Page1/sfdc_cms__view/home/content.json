@@ -1,0 +1,126 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "FinDock for Gibbons",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : {
+              "margin" : {
+                "bottom" : "",
+                "left" : "",
+                "right" : "",
+                "top" : "3rem"
+              }
+            },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "6rem",
+            "sectionConfig" : "{\"UUID\":\"9e64b30e-7bde-4734-830c-c3c9c71cc672\",\"columns\":[{\"UUID\":\"961670fb-fc2e-45f1-b447-2467bd05d67d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":null},{\"UUID\":\"ea02e98e-ea7b-4be0-a92f-08f2c535bb17\",\"columnName\":\"Column 2\",\"columnKey\":\"af738\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { },
+                "imageInfos" : "",
+                "richTextValue" : "<img src=\"https://external.findock.com/experience-cloud/icons/leaf.svg\" aria-hidden=\"true\" alt=\"\" style=\"background: var(--dxp-g-brand);padding: 4px;border-radius: 5px;margin-top: -5px;\"><span style=\"margin-left: .75rem;/*! line-height: 28px; *//*! margin-top: 10px; */display: inline-block;font-size: 1.25em;margin-top: 5px;\">FinDock for Gibbons</span>"
+              },
+              "definition" : "community_builder:htmlEditor",
+              "id" : "72c5e4d2-7e21-42c7-895b-14895e0a38ca",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "backgroundColor" : "",
+                "dxpStyle" : { },
+                "isLinkable" : false,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "none",
+                "text" : "Give Monthly.<br />\nCreate Change",
+                "textAlign" : "left",
+                "textDecoration" : "{}",
+                "textDisplayInfo" : "{\"textStyle\":\"heading-xlarge\",\"headingTag\":\"h1\",\"enableOverride\":false}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "0a34b5da-7755-437e-b1e0-8623959b05c9",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "alignment" : "left",
+                "dxpStyle" : { },
+                "fit" : "contain",
+                "height" : 350,
+                "imageInfo" : "{\"imageInfoV1\":{\"url\":\"https://external.findock.com/experience-cloud/gibbons.jpg\",\"altText\":\"Image of three gibbons in a tree\",\"contentKey\":\"\",\"contentType\":null}}",
+                "overlayColor" : "",
+                "position" : "center center",
+                "width" : 100
+              },
+              "customCssClasses" : "photo",
+              "definition" : "dxp_base:image",
+              "id" : "99b1a3a6-dfc8-49eb-940f-861673c65d85",
+              "type" : "component"
+            } ],
+            "id" : "961670fb-fc2e-45f1-b447-2467bd05d67d",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { },
+                "flowName" : "{\"flowName\":\"Donation_Flow\",\"flowLabel\":\"Donation Flow\"}"
+              },
+              "customCssClasses" : "flow",
+              "definition" : "dxp_flow:flow",
+              "id" : "392ef778-a879-40df-b458-7297b24b840f",
+              "type" : "component"
+            } ],
+            "id" : "ea02e98e-ea7b-4be0-a92f-08f2c535bb17",
+            "name" : "af738",
+            "title" : "Column 2",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "9e64b30e-7bde-4734-830c-c3c9c71cc672",
+          "type" : "component"
+        } ],
+        "id" : "f53f959e-8e50-404f-9695-dc13839813ef",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "FinDock for Gibbons",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "257d05e8-63cd-4a6c-ab20-fdfbbea37845",
+          "type" : "component"
+        } ],
+        "id" : "4b1c935f-5a87-4da7-aa3d-8f460709454b",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "fbd62213-7ccc-49d7-ac4e-f9b187b31089",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "home"
+  },
+  "urlName" : "home"
+}

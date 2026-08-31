@@ -1,0 +1,23 @@
+name: Package CI
+
+# EXC templates: self-contained org-dependent unlocked packages (one variant per org).
+# Runs the shared + variant Jest suite on every PR and push to main.
+# Package version creation/promotion is done manually via scripts/create-package-versions.sh.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Jest (shared + variants)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: python3 scripts/render-install-links.py
+      - run: npm ci
+      - run: npm run test:unit -- --coverage

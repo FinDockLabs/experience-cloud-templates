@@ -1,0 +1,70 @@
+<template>
+    <div class="cpe">
+        <template lwc:if={showAllowed}>
+            <div class="field">
+                <p id="allowed-currencies-help" class="field__help">
+                    Leave blank to offer all currencies active in your org. Limit the list to
+                    currencies supported by your payment provider.
+                </p>
+                <lightning-dual-listbox
+                    name="allowedCurrencies"
+                    label="Allowed payment currencies"
+                    source-label="Available"
+                    selected-label="Offered"
+                    options={currencyOptions}
+                    value={allowedValue}
+                    aria-describedby="allowed-currencies-help"
+                    onchange={handleAllowedChange}>
+                </lightning-dual-listbox>
+                <template lwc:if={allowedCurrenciesError}>
+                    <p class="field__error" role="alert">{allowedCurrenciesError}</p>
+                </template>
+            </div>
+        </template>
+        <template lwc:if={showSingleCurrencyNotice}>
+            <p class="field__help">
+                Your org has a single active currency. It is used automatically and payers cannot
+                switch currencies here.
+            </p>
+        </template>
+
+        <template lwc:if={showDefaultSelector}>
+            <div class="field">
+                <p id="default-currency-help" class="field__help">
+                    Choose the currency shown when the form loads, or use a Flow variable that
+                    provides it at runtime.
+                </p>
+                <lightning-combobox
+                    name="defaultCurrencySelect"
+                    label="Default currency"
+                    placeholder="Select a default"
+                    options={defaultOptions}
+                    value={comboboxValue}
+                    aria-describedby="default-currency-help"
+                    onchange={handleComboboxChange}>
+                </lightning-combobox>
+                <template lwc:if={defaultCurrencyError}>
+                    <p class="field__error" role="alert">{defaultCurrencyError}</p>
+                </template>
+            </div>
+
+            <template lwc:if={showVariableInput}>
+                <cpm-flow-field-set
+                    label="Default currency source"
+                    description="Select a Flow variable that provides the currency at runtime.">
+                    <cpm-flow-variable-input
+                        name="defaultCurrency"
+                        label="Default currency"
+                        variant="label-hidden"
+                        builder-context-filter-type="String"
+                        value={defaultCurrencyValue}
+                        value-type={defaultCurrencyValueType}
+                        builder-context={builderContext}
+                        automatic-output-variables={automaticOutputVariables}
+                        onvaluechange={handleVariableChange}>
+                    </cpm-flow-variable-input>
+                </cpm-flow-field-set>
+            </template>
+        </template>
+    </div>
+</template>

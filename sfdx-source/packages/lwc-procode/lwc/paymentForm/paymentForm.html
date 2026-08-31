@@ -1,0 +1,85 @@
+<template>
+    <div class="slds-card">
+        <div class="slds-card__body slds-card__body_inner">
+
+            <div class="payment-summary">
+                <p class="payment-summary__amount">{formattedAmount}</p>
+                <p class="payment-summary__frequency">{frequencyLabel}</p>
+            </div>
+
+            <fieldset class="form-section slds-form slds-form_stacked">
+                <legend class="section-header">{labels.ec_header_personal_details}</legend>
+                <lightning-input type="text"
+                                 label={labels.ec_label_first_name}
+                                 placeholder={labels.ec_placeholder_first_name}
+                                 value={firstName}
+                                 data-field="firstName"
+                                 autocomplete="given-name"
+                                 required
+                                 pattern=".*\S.*"
+                                 message-when-pattern-mismatch={labels.ec_error_invalid_name}
+                                 onchange={handleFieldChange}>
+                </lightning-input>
+                <lightning-input type="text"
+                                 label={labels.ec_label_last_name}
+                                 placeholder={labels.ec_placeholder_last_name}
+                                 value={lastName}
+                                 data-field="lastName"
+                                 autocomplete="family-name"
+                                 required
+                                 pattern=".*\S.*"
+                                 message-when-pattern-mismatch={labels.ec_error_invalid_name}
+                                 onchange={handleFieldChange}>
+                </lightning-input>
+                <lightning-input type="email"
+                                 label={labels.ec_label_email_address}
+                                 placeholder={labels.ec_placeholder_email}
+                                 value={email}
+                                 data-field="email"
+                                 autocomplete="email"
+                                 required
+                                 onchange={handleFieldChange}>
+                </lightning-input>
+            </fieldset>
+
+            <c-currency-picker
+                allowed-currencies={allowedCurrencies}
+                default-currency={defaultCurrency}
+                oncurrencychange={handleCurrencyChange}>
+            </c-currency-picker>
+
+            <fieldset class="form-section slds-form slds-form_stacked">
+                <legend class="section-header">{labels.ec_header_select_payment_method}</legend>
+                <template lwc:if={isConfigValid}>
+                    <c-payment-selector
+                        config={paymentMethodConfig}
+                        frequency={frequency}
+                        payment-group-id={paymentGroupId}
+                        onpaymentmethodchanged={handlePaymentMethodChanged}>
+                    </c-payment-selector>
+                </template>
+                <template lwc:else>
+                    <div class="payment-methods-error" role="alert">
+                        <lightning-icon
+                            icon-name="utility:clear"
+                            size="large"
+                            alternative-text=""
+                            variant="error"
+                            class="error-icon">
+                        </lightning-icon>
+                        <p class="error-message">{labels.ec_error_payment_methods_unavailable}</p>
+                    </div>
+                </template>
+            </fieldset>
+            <cpm-pay-button
+                payment-intent={paymentIntent}
+                disabled={isPayButtonDisabled}
+                payment-group-id={paymentGroupId}
+                amount-one-time={displayAmountOneTime}
+                currency-one-time={activeCurrency}
+                amount-recurring={displayAmountRecurring}
+                currency-recurring={activeCurrency}>
+            </cpm-pay-button>
+        </div>
+    </div>
+</template>

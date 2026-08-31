@@ -1,0 +1,93 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "Pay",
+  "contentBody" : {
+    "component" : {
+      "attributes" : { },
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "0rem",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "0rem",
+            "sectionConfig" : "{\"UUID\":\"5ccf5fb5-3d6b-4c51-9d65-94ab6ba7ebcd\",\"columns\":[{\"UUID\":\"dbfd03e0-781d-41b4-90c9-75f91f8109d5\",\"columnName\":\"Column 1\",\"columnKey\":\"headerSection\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "backgroundColor" : "",
+                "isLinkable" : true,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "none",
+                "text" : "← Back",
+                "textAlign" : "left",
+                "textDecoration" : "{}",
+                "textDisplayInfo" : "{\"textStyle\":\"body-small\",\"headingTag\":\"p\",\"enableOverride\":false}",
+                "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.findockforgibbons.org/\"}}}}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "f9ad0499-091a-4a51-8ee4-060a8d9c51d5",
+              "type" : "component"
+            } ],
+            "id" : "dbfd03e0-781d-41b4-90c9-75f91f8109d5",
+            "name" : "headerSection",
+            "title" : "Theme Header",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "5ccf5fb5-3d6b-4c51-9d65-94ab6ba7ebcd",
+          "type" : "component"
+        } ],
+        "id" : "56bdf4bc-b731-4ad5-84c3-79179fc104b6",
+        "name" : "header",
+        "title" : "Theme Header",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"24b516df-af33-4b99-9767-945df0ab5fde\",\"columns\":[{\"UUID\":\"91f4f2ad-54c9-410f-832b-effc08607622\",\"columnName\":\"Column 1\",\"columnKey\":\"footerSection\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "id" : "91f4f2ad-54c9-410f-832b-effc08607622",
+            "name" : "footerSection",
+            "title" : "Theme Footer",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "24b516df-af33-4b99-9767-945df0ab5fde",
+          "type" : "component"
+        } ],
+        "id" : "100ecead-1094-4daa-9d3b-28a1397d5e32",
+        "name" : "footer",
+        "title" : "Theme Footer",
+        "type" : "region"
+      }, {
+        "id" : "e24e98e9-7dc3-4a08-a6d8-585e287b866a",
+        "name" : "default",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:simpleThemeLayout",
+      "id" : "d206fd43-ea0a-46df-9163-f13a2fbf5677",
+      "type" : "component"
+    }
+  },
+  "urlName" : "pay"
+}

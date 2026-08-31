@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2">
+    <file original="Salesforce" source-language="en_US" target-language="TARGET_LANGUAGE_CODE" translation-type="metadata" datatype="xml">
+        <body>
+        <trans-unit id="CustomLabel.ec_sr_progress_stage_announcement" maxwidth="1000" size-unit="char">
+            <source>Step {0} of 3</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_stage_label_amount" maxwidth="1000" size-unit="char">
+            <source>Amount</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_stage_label_information" maxwidth="1000" size-unit="char">
+            <source>Information</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_stage_label_payment" maxwidth="1000" size-unit="char">
+            <source>Payment</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_donation_amount_heading" maxwidth="1000" size-unit="char">
+            <source>Select Your Donation Amount</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_amount_max_error" maxwidth="1000" size-unit="char">
+            <source>Maximum amount is {0}</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_amount_min_error" maxwidth="1000" size-unit="char">
+            <source>Minimum amount is {0}</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_give_once" maxwidth="1000" size-unit="char">
+            <source>Give once</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_monthly" maxwidth="1000" size-unit="char">
+            <source>Monthly</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_other_amount" maxwidth="1000" size-unit="char">
+            <source>Other amount</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_donation_frequency" maxwidth="1000" size-unit="char">
+            <source>Donation frequency</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_preset_amount_group" maxwidth="1000" size-unit="char">
+            <source>Select a preset donation amount</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_pay_button_label" maxwidth="1000" size-unit="char">
+            <source>Pay</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_loading" maxwidth="1000" size-unit="char">
+            <source>Loading</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_error_payment_generic" maxwidth="1000" size-unit="char">
+            <source>We couldn't process your payment. Please try again.</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_error_payment_methods_unavailable" maxwidth="1000" size-unit="char">
+            <source>Something went wrong</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_label_payment_method" maxwidth="1000" size-unit="char">
+            <source>Payment Method</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_payment_processing_error" maxwidth="1000" size-unit="char">
+            <source>There was a problem processing your payment. Please check the fields within the selected payment method.</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_spinner_loading_payment_methods" maxwidth="1000" size-unit="char">
+            <source>Loading payment methods</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_validation_value_invalid" maxwidth="1000" size-unit="char">
+            <source>This value is invalid</source>
+            <target></target>
+        </trans-unit>
+        </body>
+    </file>
+</xliff>

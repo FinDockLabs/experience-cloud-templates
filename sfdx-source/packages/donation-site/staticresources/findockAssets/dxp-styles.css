@@ -1,0 +1,75 @@
+/*
+   To use this Global CSS file in an Experience Cloud Site, add the following tag to the Settings > Advanced > Head Markup.
+   <link rel="stylesheet" href="{ basePath }/sfsites/c/resource/findockAssets/dxp-styles.css?{ versionKey }" />
+*/
+
+.flow .slds-spinner {
+    display: none;
+}
+.flow .navigationBar {
+    border: none !important;
+}
+
+.flow {
+    --slds-c-input-shadow: none;
+}
+
+.slds-select_container .slds-select {
+    padding-left: var(--slds-c-input-spacing-inline-start, var(--sds-c-input-spacing-horizontal-start, var(--dxp-s-form-element-spacing-horizontal-start, 12px)));
+    padding-top: var(--dxp-s-form-element-spacing-block-start, 0);
+    padding-bottom: var(--dxp-s-form-element-spacing-block-end, 0);
+    height: calc(var(--dxp-s-form-element-text-line-height) + var(--dxp-s-form-element-spacing-block-start) + var(--dxp-s-form-element-spacing-block-end));
+}
+
+flowruntime-lwc-body {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+flowruntime-spinner-lwc, flowruntime-spinner-lwc:before, flowruntime-spinner-lwc:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+flowruntime-spinner-lwc {
+    margin: 25em auto;
+  content: '';
+  color: #AAA;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+}
+flowruntime-spinner-lwc:before,
+flowruntime-spinner-lwc:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+flowruntime-spinner-lwc:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+flowruntime-spinner-lwc:after {
+  left: 3.5em;
+}
+
+@keyframes bblFadInOut {
+  0%, 80%, 100% { box-shadow: 0 2.5em 0 -1.3em }
+  40% { box-shadow: 0 2.5em 0 0 }
+}

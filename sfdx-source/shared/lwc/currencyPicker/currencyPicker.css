@@ -1,0 +1,10 @@
+.currency-picker-container {
+    width: 100%;
+}
+
+.currency-picker {
+    display: block;
+    width: 100%;
+    max-width: var(--currency-picker-max-width, 20rem);
+    margin-block-end: var(--dxp-s-spacing-medium, var(--dxp-g-spacing-medium, var(--slds-g-spacing-4, 1rem)));
+}

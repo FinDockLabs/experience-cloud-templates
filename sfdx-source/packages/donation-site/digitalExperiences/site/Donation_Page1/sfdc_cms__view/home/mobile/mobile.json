@@ -1,0 +1,22 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "FinDock for Gibbons",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "attributes" : {
+          "dxpStyle" : {
+            "isVisible" : false
+          }
+        },
+        "id" : "99b1a3a6-dfc8-49eb-940f-861673c65d85"
+      }, {
+        "id" : "9e64b30e-7bde-4734-830c-c3c9c71cc672",
+        "attributes" : {
+          "sectionColumnGutterWidth" : ""
+        }
+      } ]
+    }
+  },
+  "urlName" : "home"
+}

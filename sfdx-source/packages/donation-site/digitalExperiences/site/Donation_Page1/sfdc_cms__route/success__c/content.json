@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Success",
+  "contentBody" : {
+    "activeViewId" : "Success",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-success",
+    "urlPrefix" : "success"
+  },
+  "urlName" : "success"
+}

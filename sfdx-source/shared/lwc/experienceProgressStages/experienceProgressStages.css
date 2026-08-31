@@ -1,0 +1,77 @@
+.stage-progress {
+    --stage-active-color: var(--dxp-g-brand, var(--slds-g-color-brand-base-60));
+    --stage-inactive-color: var(--slds-g-color-neutral-base-90);
+    --stage-inactive-number-color: var(--slds-g-color-neutral-base-40);
+
+    display: grid;
+    grid-template-columns: auto minmax(var(--slds-g-spacing-8), 1fr) auto minmax(var(--slds-g-spacing-8), 1fr) auto;
+    align-items: start;
+    width: 100%;
+    column-gap: var(--slds-g-spacing-4);
+    margin-bottom: 2em;
+}
+
+.stage-progress__stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--slds-g-spacing-2);
+    min-width: var(--slds-g-sizing-12);
+}
+
+.stage-progress__circle {
+    width: var(--slds-g-sizing-10);
+    height: var(--slds-g-sizing-10);
+    border-radius: 50%;
+    background-color: var(--stage-inactive-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stage-progress__circle--active {
+    background-color: var(--stage-active-color);
+}
+
+.stage-progress__number {
+    font-family: var(--dxp-s-form-element-text-font-family, var(--slds-g-font-family-sans));
+    font-size: var(--slds-g-font-scale-2);
+    font-weight: var(--slds-g-font-weight-4);
+    line-height: var(--slds-g-line-height-heading);
+    color: var(--stage-inactive-number-color);
+}
+
+.stage-progress__number--active {
+    color: var(--slds-g-color-neutral-base-100);
+}
+
+.stage-progress__label {
+    font-family: var(--dxp-s-form-element-text-font-family, var(--slds-g-font-family-sans));
+    font-size: var(--slds-g-font-scale-0);
+    line-height: var(--slds-g-line-height-text);
+    color: var(--dxp-s-form-element-text-color, var(--slds-g-color-neutral-base-10));
+    text-align: center;
+    white-space: nowrap;
+}
+
+.stage-progress__connector {
+    align-self: start;
+    margin-top: calc((var(--slds-g-sizing-10) / 2) - (var(--slds-g-sizing-border-1) / 2));
+    height: var(--slds-g-sizing-border-1);
+    background-color: var(--stage-inactive-color);
+}
+
+.stage-progress__connector--active {
+    background-color: var(--stage-active-color);
+}
+
+@media (max-width: 480px) {
+    .stage-progress {
+        column-gap: var(--slds-g-spacing-2);
+    }
+
+    .stage-progress__label {
+        white-space: normal;
+        text-wrap: balance;
+    }
+}

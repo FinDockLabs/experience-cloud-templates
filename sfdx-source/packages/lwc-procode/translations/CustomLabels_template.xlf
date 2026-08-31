@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2">
+    <file original="Salesforce" source-language="en_US" target-language="TARGET_LANGUAGE_CODE" translation-type="metadata" datatype="xml">
+        <body>
+        <trans-unit id="CustomLabel.ec_label_first_name" maxwidth="1000" size-unit="char">
+            <source>First Name</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_last_name" maxwidth="1000" size-unit="char">
+            <source>Last Name</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_email_address" maxwidth="1000" size-unit="char">
+            <source>Email Address</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_placeholder_first_name" maxwidth="1000" size-unit="char">
+            <source>First name</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_placeholder_last_name" maxwidth="1000" size-unit="char">
+            <source>Last name</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_error_invalid_name" maxwidth="1000" size-unit="char">
+            <source>Please enter a valid name.</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_placeholder_email" maxwidth="1000" size-unit="char">
+            <source>name@example.com</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_frequency_one_time" maxwidth="1000" size-unit="char">
+            <source>One-time</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_frequency_recurring" maxwidth="1000" size-unit="char">
+            <source>Monthly</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_header_personal_details" maxwidth="1000" size-unit="char">
+            <source>Enter your personal details</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_header_select_payment_method" maxwidth="1000" size-unit="char">
+            <source>Select a payment method</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.ec_label_currency" maxwidth="1000" size-unit="char">
+            <source>Currency</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_pay_button_label" maxwidth="1000" size-unit="char">
+            <source>Pay</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_loading" maxwidth="1000" size-unit="char">
+            <source>Loading</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_error_payment_generic" maxwidth="1000" size-unit="char">
+            <source>We couldn't process your payment. Please try again.</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_error_payment_methods_unavailable" maxwidth="1000" size-unit="char">
+            <source>Something went wrong</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_label_payment_method" maxwidth="1000" size-unit="char">
+            <source>Payment Method</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_payment_processing_error" maxwidth="1000" size-unit="char">
+            <source>There was a problem processing your payment. Please check the fields within the selected payment method.</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_spinner_loading_payment_methods" maxwidth="1000" size-unit="char">
+            <source>Loading payment methods</source>
+            <target></target>
+        </trans-unit>
+        <trans-unit id="CustomLabel.cpm__ec_validation_value_invalid" maxwidth="1000" size-unit="char">
+            <source>This value is invalid</source>
+            <target></target>
+        </trans-unit>
+        </body>
+    </file>
+</xliff>
