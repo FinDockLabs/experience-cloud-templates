@@ -4,19 +4,6 @@ This template contains building blocks to help you build custom Lightning Web Co
 
 This is the code-first alternative to using our managed LWCs directly in Flows. For other options, see [Templates for FinDock Payment Experiences](https://github.com/FinDockLabs/payment-experiences-templates).
 
-## Deploy
-
-Note: This deploys an example LWC wrapper around FinDock's components. Both out of the box components are part of the FinDock managed package and can be used without the code in this template.
-
-<!-- INSTALL_LINK:START -->
-<a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gejdIAA" target="_blank" rel="noopener noreferrer"><img alt="Install in a production or Developer org" src="https://img.shields.io/badge/Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge"></a>
-<a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001gejdIAA" target="_blank" rel="noopener noreferrer"><img alt="Install in a sandbox" src="https://img.shields.io/badge/Install-Sandbox-6B7A8F?style=for-the-badge"></a>
-
-Version 0.1.0-2
-<!-- INSTALL_LINK:END -->
-
-> **Compatibility:** Install only one template variant per org. See the [package compatibility notes](../../../README.md#package-compatibility). Checkout may coexist with another variant.
-
 ## Components
 
 | Component | Tag | Exposed | Purpose |
