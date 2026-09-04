@@ -41,18 +41,18 @@
       "versionDescription": ""
     },
     {
-      "path": "sfdx-source/packages/checkout-site",
       "package": "FinDock Experiences - Checkout Site",
+      "path": "sfdx-source/packages/checkout",
       "versionName": "ver 0.1",
       "versionNumber": "0.1.0.NEXT",
       "default": false,
       "versionDescription": ""
     },
     {
-      "path": "sfdx-source/packages/donation-site",
       "package": "FinDock Experiences - Donation Site",
       "versionName": "ver 0.1",
       "versionNumber": "0.1.0.NEXT",
+      "path": "sfdx-source/packages/donation-site",
       "default": false,
       "versionDescription": ""
     }
@@ -75,6 +75,13 @@
     "FinDock Experiences - Checkout Site": "0HoP400000002rRKAQ",
     "FinDock Experiences - Checkout Site@0.1.0-1": "04tP4000001h1ebIAA",
     "FinDock Experiences - Donation Site": "0HoP400000002t3KAA",
-    "FinDock Experiences - Donation Site@0.1.0-1": "04tP4000001h1gDIAQ"
+    "FinDock Experiences - Donation Site@0.1.0-1": "04tP4000001h1gDIAQ",
+    "FinDock Experiences - Checkout Site@0.1.0-2": "04tP4000001hSJpIAM",
+    "FinDock Experiences - Checkout Site@0.1.0-3": "04tP4000001hSLRIA2",
+    "FinDock Experiences - Donation Site@0.1.0-2": "04tP4000001hYPFIA2",
+    "FinDock Experiences - Checkout@0.1.0-3": "04tP4000001hYSTIA2",
+    "FinDock Experiences - Fundraising@0.1.0-4": "04tP4000001hYU5IAM",
+    "FinDock Experiences - Fundraising UK@0.1.0-3": "04tP4000001hYDyIAM",
+    "FinDock Experiences - NPSP@0.1.0-3": "04tP4000001hYVhIAM"
   }
 }
