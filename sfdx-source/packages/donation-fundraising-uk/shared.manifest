@@ -1,5 +1,0 @@
-# Which of sfdx-source/shared/ is assembled into this package at build time.
-# Values: all | none   (see scripts/create-package-versions.sh)
-#
-# Flow renders c:amountAndFrequency and c:experienceProgressStages. (Currency components are unused here, but assembly is all-or-nothing for now.)
-all
