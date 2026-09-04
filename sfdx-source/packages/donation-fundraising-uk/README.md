@@ -1,9 +1,9 @@
 # Experience Cloud Donation Flows for Fundraising for UK
 <!-- INSTALL_LINK:START -->
-<a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001hYDyIAM" target="_blank" rel="noopener noreferrer"><img alt="Install in a production or Developer org" src="https://img.shields.io/badge/Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge"></a>
-<a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001hYDyIAM" target="_blank" rel="noopener noreferrer"><img alt="Install in a sandbox" src="https://img.shields.io/badge/Install-Sandbox-6B7A8F?style=for-the-badge"></a>
+<a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001haCXIAY" target="_blank" rel="noopener noreferrer"><img alt="Install in a production or Developer org" src="https://img.shields.io/badge/Install-Production%20or%20Developer%20org-00A1E0?style=for-the-badge"></a>
+<a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tP4000001haCXIAY" target="_blank" rel="noopener noreferrer"><img alt="Install in a sandbox" src="https://img.shields.io/badge/Install-Sandbox-6B7A8F?style=for-the-badge"></a>
 
-Version 0.1.0-3
+Version 0.1.0-4
 <!-- INSTALL_LINK:END -->
 
 > **Compatibility:** Install only one template variant per org. See the [package compatibility notes](../../../README.md#package-compatibility). Checkout may coexist with another variant.

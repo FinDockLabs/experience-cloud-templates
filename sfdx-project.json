@@ -42,7 +42,7 @@
     },
     {
       "package": "FinDock Experiences - Checkout Site",
-      "path": "sfdx-source/packages/checkout",
+      "path": "sfdx-source/packages/checkout-site",
       "versionName": "ver 0.1",
       "versionNumber": "0.1.0.NEXT",
       "default": false,
@@ -60,5 +60,19 @@
   "name": "experience-cloud-templates",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "67.0"
+  "sourceApiVersion": "67.0",
+  "packageAliases": {
+    "FinDock Experiences - Fundraising": "0HoP400000002mbKAA",
+    "FinDock Experiences - Fundraising UK": "0HoP400000002oDKAQ",
+    "FinDock Experiences - NPSP": "0HoP400000002jNKAQ",
+    "FinDock Experiences - Checkout": "0HoP400000002kzKAA",
+    "FinDock Experiences - Checkout Site": "0HoP400000002rRKAQ",
+    "FinDock Experiences - Donation Site": "0HoP400000002t3KAA",
+    "FinDock Experiences - Checkout Site@0.1.0-4": "04tP4000001hZTNIA2",
+    "FinDock Experiences - Checkout Site@0.1.0-5": "04tP4000001hZmjIAE",
+    "FinDock Experiences - Checkout Site@0.1.0-6": "04tP4000001hZoLIAU",
+    "FinDock Experiences - Fundraising@0.1.0-5": "04tP4000001ha9JIAQ",
+    "FinDock Experiences - NPSP@0.1.0-4": "04tP4000001haAvIAI",
+    "FinDock Experiences - Fundraising UK@0.1.0-4": "04tP4000001haCXIAY"
+  }
 }
